@@ -80,7 +80,7 @@ def crop(path, out_path, show=False):
 
     orig_im = cv2.imread(path)
     downscaled_height = 600.0
-    im, scale = util.downscale(downscaled_height, orig_im)
+    im, scale = util.downscale(orig_im, downscaled_height)
 
     threshold_lower = 30
     threshold_upper = 200
