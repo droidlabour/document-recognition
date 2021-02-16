@@ -1,7 +1,6 @@
 # coding=utf-8
 import util
 from transform import four_point_transform
-from skimage.filters import threshold_local
 import cv2
 
 
@@ -61,10 +60,6 @@ def scan(im_path, show=True):
         warped = four_point_transform(orig, screenCnt.reshape(4, 2) * scale)
     else:
         warped = orig
-
-    warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-    warped = warped > threshold_local(warped, 251, offset=10)
-    warped = warped.astype('uint8') * 255
 
     if show:
         cv2.imshow('Original', util.resize(orig, height=650))
