@@ -31,7 +31,7 @@ def scan(im_path, show=True):
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    (_, cnts, _) = cv2.findContours(edged_copy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    (cnts, _) = cv2.findContours(edged_copy, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:4]
 
     screenCnt = []
