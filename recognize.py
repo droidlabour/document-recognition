@@ -51,7 +51,7 @@ def recognize(imgname, output, desired,
 
 if __name__ == '__main__':
     # example usage:
-    #python .\recognize.py -i photos\chom4.jpg -c texts\chom.txt -o output.txt
+    # python .\recognize.py -i photos\chom4.jpg -c texts\chom.txt -o output.txt
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=False, default='photos/chom4.jpg',
                     help="Path to the image to be scanned")

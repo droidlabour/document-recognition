@@ -16,11 +16,6 @@ def find_components(edges, max_components=10):
         dilated_image = cv2.convertScaleAbs(cv2.dilate(edges / 255, np.ones((3, 3)), iterations=n))
         components = cv2.connectedComponentsWithStats(dilated_image)
         count = components[0]
-    if imshow:
-        cv2.imshow('Edged', util.resize(edges, height=650))
-        cv2.imshow('Edged dilated', util.resize(255 * dilated_image, height=650))
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
     return components
 
 
